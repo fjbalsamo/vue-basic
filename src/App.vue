@@ -1,17 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Hola soy App.vue</h1>
+    <ComponenteSimple key="cs1"></ComponenteSimple>
+    <ComponenteSimple key="cs2" />
+    <hr />
+    <ComponenteLogica />
+    <hr />
+    <ComponenteReactivo />
+    <hr />
+    <ComponenteReactivo />
+    <hr />
+    <ComponenteVisibilidad />
+    <hr />
+    <componente-visibilidad />
+    <ComponenteProps saludo="saludo CP1" />
+    <hr />
+    <ComponenteProps saludo="saludo CP2" :nombre="nombre" />
+    <button @click="nombre = 'Alex'">click</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import ComponenteSimple from "./components/ComponenteSimple.vue";
+import ComponenteLogica from "./components/ComponenteLogica.vue";
+import ComponenteReactivo from "./components/ComponenteReactivo.vue";
+import ComponenteVisibilidad from "./components/ComponenteVisibilidad.vue";
+import ComponenteProps from "./components/ComponenteProps.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    ComponenteSimple,
+    ComponenteLogica,
+    ComponenteReactivo,
+    ComponenteVisibilidad,
+    ComponenteProps,
+  },
+  data() {
+    return {
+      nombre: "Gloria",
+    };
   },
 };
 </script>
